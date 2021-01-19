@@ -13,6 +13,7 @@
         margin: 0;
         padding: 0;
         overflow: hidden;
+        background-color: #039dfc;
       }
 
       .calc {
@@ -20,14 +21,17 @@
         height: 50%;
         margin: auto;
         margin-top: 15%;
-        background-color: black;
+        background-color: #000;
+        box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.5);
       }
 
       #calcView {
         box-sizing: border-box;
         font-size: 2em;
-        min-height: 100px;
-        background-color: #039dfc;
+        min-height: 120px;
+        color: #FFF;
+        padding-left: 20px;
+        background-color: #002e72;
         border: 2px solid rgba(2, 125, 201, 0.5);
       }
 
@@ -47,17 +51,27 @@
         width: 25%;
         height: 10vh;
         min-height: 70px;
-        background-color: #70c9ff;
+        background-color: #edf3f7;
         outline: none;
         font-size: 25px;
       }
 
       #equal {
         width: 50%;
+        background-color: #CCC;
+      }
+
+      .calcKey:hover {
+        background-color: #2e8afa;
+        color: #FFF;
       }
 
       .calcKey:active {
-        background-color: red;
+        background-color: rgb(0, 102, 255);
+      }
+
+      .op {
+        background-color: hsl(203, 92%, 75%);
       }
     </style>
   </head>
@@ -85,29 +99,29 @@
               <div id="calcKeyGroup">
                 <button name="C" onClick={e => props.onClick(e.target.name)} className="calcKey">C</button>
                 <button name="<" onClick={e => props.onClick(e.target.name)} className="calcKey">{"<-"}</button>
-                <button name="+/-" onClick={e => props.onClick(e.target.name)} className="calcKey">+/-</button>
-                <button name="/" onClick={e => props.onClick(e.target.name)} className="calcKey">/</button>
+                <button name="+/-" onClick={e => props.onClick(e.target.name)} className="calcKey op">+/-</button>
+                <button name="/" onClick={e => props.onClick(e.target.name)} className="calcKey op">/</button>
               </div>
 
               <div id="calcKeyGroup">
                 <button name="7" onClick={e => props.onClick(e.target.name)} className="calcKey">7</button>
                 <button name="8" onClick={e => props.onClick(e.target.name)} className="calcKey">8</button>
                 <button name="9" onClick={e => props.onClick(e.target.name)} className="calcKey">9</button>
-                <button name="*" onClick={e => props.onClick(e.target.name)} className="calcKey">*</button>
+                <button name="*" onClick={e => props.onClick(e.target.name)} className="calcKey op">*</button>
               </div>
 
               <div id="calcKeyGroup">
                 <button name="4" onClick={e => props.onClick(e.target.name)} className="calcKey">4</button>
                 <button name="5" onClick={e => props.onClick(e.target.name)} className="calcKey">5</button>
                 <button name="6" onClick={e => props.onClick(e.target.name)} className="calcKey">6</button>
-                <button name="-" onClick={e => props.onClick(e.target.name)} className="calcKey">-</button>
+                <button name="-" onClick={e => props.onClick(e.target.name)} className="calcKey op">-</button>
               </div>
 
               <div id="calcKeyGroup">
                 <button name="1" onClick={e => props.onClick(e.target.name)} className="calcKey">1</button>
                 <button name="2" onClick={e => props.onClick(e.target.name)} className="calcKey">2</button>
                 <button name="3" onClick={e => props.onClick(e.target.name)} className="calcKey">3</button>
-                <button name="+" onClick={e => props.onClick(e.target.name)} className="calcKey">+</button>
+                <button name="+" onClick={e => props.onClick(e.target.name)} className="calcKey op">+</button>
               </div>
 
               <div id="calcKeyGroup">
