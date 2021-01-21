@@ -155,6 +155,8 @@
             this.reset()
           } else if (button === "<") {
             this.backspace()
+          } else if(button === "+/-"){
+            this.pos_to_Neg(this.state.result)
           } else {
             this.setState({
               result: this.state.result + button
@@ -185,6 +187,12 @@
             result: this.state.result.slice(0, -1)
           })
         };
+
+        pos_to_Neg = (num) => {
+          this.setState({
+            result: this.state.result < 0 ? Math.abs(num) : -Math.abs(num)
+          })
+        }
 
         render(){
           return(
